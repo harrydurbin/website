@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Study</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="room-container">
+        <img src="assets/homepage-room.png" alt="Cozy Study" class="room-img">
+
+        <h1 class="title">Welcome to<br>Harry's</h1>
+
+        <button id="lang-toggle" class="lang-btn">ES</button>
+
+        <svg viewBox="0 0 1920 1080" class="svg-map">
+            
+            <a href="pages/gis-projects.html">
+                <path class="hotspot" d="M600,300 Q650,280 700,300 L710,450 L590,450 Z" />
+            </a>
+
+            <a href="pages/portfolio.html">
+                <path class="hotspot" d="M50,200 L180,200 L180,380 L50,380 Z" />
+            </a>
+
+            </svg>
+    </div>
+
+    <script>
+        let isEnglish = true;
+        const title = document.querySelector('.title');
+        const btn = document.getElementById('lang-toggle');
+        btn.addEventListener('click', () => {
+            isEnglish = !isEnglish;
+            title.innerHTML = isEnglish ? "Welcome to<br>Harry's" : "Bienvenido a<br>Harry's";
+            btn.textContent = isEnglish ? "ES" : "EN";
+        });
+    </script>
+
+</body>
+</html>
