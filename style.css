@@ -29,11 +29,11 @@ html, body {
 /* Overlay the SVG perfectly on top of the image */
 .svg-map {
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 2%;
+    left: 2%;
     width: 100vw;
     height: 100vh;
-    transform: translate(-10%, -10%);
+    transform: translate(-2%, -2%);
     z-index: 99;
     
     /* ADD THIS: This makes the SVG container "click-through" */
