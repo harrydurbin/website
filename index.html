@@ -44,7 +44,7 @@ z" />
 z" />
             </a>
 
-            <a href="pages/music.html">
+            <a href="#" data-music="record">
                 <path class="hotspot" d="m 1182.55,498.34 7.33,5.33 137.26,10.09 48.21,-13.78 -1.57,-33.5 -9.08,-1.25 -22.85,-82.97
 h -3.13
 l -126.8,-0.31 -8.14,10.02 20.98,73.89 -17.85,0.94 -7.2,1.25 -1.57,2.5 0.63,1.57 -15.03,3.76
@@ -75,6 +75,8 @@ z" />
             
             </svg>
     </div>
+
+    <audio id="record-player" src="assets/Records/After All.opus" preload="none"></audio>
 
     <div id="gallery-modal" class="modal" aria-hidden="true">
         <div class="modal-backdrop" data-close-gallery></div>
@@ -323,22 +325,76 @@ z" />
             ],
             photos: [
                 {
-                    title: 'City Lights',
-                    description: 'Nighttime cityscape with bright reflections.',
-                    thumb: 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect width="400" height="300" fill="%231c2638"/%3E%3Crect x="40" y="140" width="40" height="120" fill="%23f5d259"/%3E%3Crect x="110" y="160" width="40" height="100" fill="%23f9e27c"/%3E%3Crect x="180" y="100" width="40" height="160" fill="%23369ac9"/%3E%3Crect x="250" y="130" width="40" height="130" fill="%23de7c4b"/%3E%3Crect x="320" y="155" width="40" height="105" fill="%23f5d259"/%3E%3C/svg%3E',
-                    large: 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750"%3E%3Crect width="1000" height="750" fill="%231c2638"/%3E%3Crect x="100" y="350" width="90" height="300" fill="%23f5d259"/%3E%3Crect x="210" y="420" width="90" height="230" fill="%23f9e27c"/%3E%3Crect x="340" y="250" width="90" height="400" fill="%23369ac9"/%3E%3Crect x="470" y="325" width="90" height="325" fill="%23de7c4b"/%3E%3Crect x="600" y="385" width="90" height="265" fill="%23f5d259"/%3E%3C/svg%3E'
+                    title: 'Photo 01',
+                    description: 'Photo piece number 01.',
+                    thumb: 'assets/Photo_Album/01.jpg',
+                    large: 'assets/Photo_Album/01.jpg'
                 },
                 {
-                    title: 'Forest Path',
-                    description: 'A quiet path winding through pine trees.',
-                    thumb: 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect width="400" height="300" fill="%23476b39"/%3E%3Cpath d="M 0 220 C 100 180 150 250 400 160 L 400 300 L 0 300 Z" fill="%2351a36e"/%3E%3Cpath d="M 60 220 L 80 140 L 100 180 L 120 100 L 140 160 L 160 80 L 180 150" stroke="%23fff" stroke-width="8" fill="none"/%3E%3Ctext x="50%" y="50" dominant-baseline="middle" text-anchor="middle" font-size="24" fill="%23f1f1f1" font-family="Arial, sans-serif"%3EForest%3C/text%3E%3C/svg%3E',
-                    large: 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750"%3E%3Crect width="1000" height="750" fill="%23476b39"/%3E%3Cpath d="M 0 550 C 250 420 350 620 1000 340 L 1000 750 L 0 750 Z" fill="%2351a36e"/%3E%3Cpath d="M 150 460 L 190 260 L 220 340 L 250 180 L 280 300 L 320 120 L 360 310" stroke="%23fff" stroke-width="16" fill="none"/%3E%3Ctext x="50%" y="110" dominant-baseline="middle" text-anchor="middle" font-size="56" fill="%23f1f1f1" font-family="Arial, sans-serif"%3EForest Path%3C/text%3E%3C/svg%3E'
+                    title: 'Photo 02',
+                    description: 'Photo piece number 02.',
+                    thumb: 'assets/Photo_Album/02.jpg',
+                    large: 'assets/Photo_Album/02.jpg'
                 },
                 {
-                    title: 'Portrait',
-                    description: 'A simple portrait with warm lighting.',
-                    thumb: 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect width="400" height="300" fill="%23c29f78"/%3E%3Ccircle cx="200" cy="140" r="70" fill="%23f8e0c6"/%3E%3Cpath d="M 160 215 C 180 250 220 250 240 215" stroke="%236a3b12" stroke-width="8" fill="none"/%3E%3Ctext x="50%" y="50" dominant-baseline="middle" text-anchor="middle" font-size="24" fill="%23433b29" font-family="Arial, sans-serif"%3EPortrait%3C/text%3E%3C/svg%3E',
-                    large: 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750"%3E%3Crect width="1000" height="750" fill="%23c29f78"/%3E%3Ccircle cx="500" cy="350" r="190" fill="%23f8e0c6"/%3E%3Cpath d="M 380 510 C 420 600 580 600 620 510" stroke="%236a3b12" stroke-width="20" fill="none"/%3E%3Ctext x="50%" y="95" dominant-baseline="middle" text-anchor="middle" font-size="56" fill="%23433b29" font-family="Arial, sans-serif"%3EPortrait%3C/text%3E%3C/svg%3E'
+                    title: 'Photo 03',
+                    description: 'Photo piece number 03.',
+                    thumb: 'assets/Photo_Album/03.jpg',
+                    large: 'assets/Photo_Album/03.jpg'
+                },
+                {
+                    title: 'Photo 04',
+                    description: 'Photo piece number 04.',
+                    thumb: 'assets/Photo_Album/04.jpg',
+                    large: 'assets/Photo_Album/04.jpg'
+                },
+                {
+                    title: 'Photo 05',
+                    description: 'Photo piece number 05.',
+                    thumb: 'assets/Photo_Album/05.jpg',
+                    large: 'assets/Photo_Album/05.jpg'
+                },
+                {
+                    title: 'Photo 06',
+                    description: 'Photo piece number 06.',
+                    thumb: 'assets/Photo_Album/06.jpg',
+                    large: 'assets/Photo_Album/06.jpg'
+                },
+                {
+                    title: 'Photo 07',
+                    description: 'Photo piece number 07.',
+                    thumb: 'assets/Photo_Album/07.jpg',
+                    large: 'assets/Photo_Album/07.jpg'
+                },
+                {
+                    title: 'Photo 08',
+                    description: 'Photo piece number 08.',
+                    thumb: 'assets/Photo_Album/08.jpg',
+                    large: 'assets/Photo_Album/08.jpg'
+                },
+                {
+                    title: 'Photo 09',
+                    description: 'Photo piece number 09.',
+                    thumb: 'assets/Photo_Album/09.jpg',
+                    large: 'assets/Photo_Album/09.jpg'
+                },
+                {
+                    title: 'Photo 10',
+                    description: 'Photo piece number 10.',
+                    thumb: 'assets/Photo_Album/10.jpg',
+                    large: 'assets/Photo_Album/10.jpg'
+                },
+                {
+                    title: 'Photo 11',
+                    description: 'Photo piece number 11.',
+                    thumb: 'assets/Photo_Album/11.jpg',
+                    large: 'assets/Photo_Album/11.jpg'
+                },
+                {
+                    title: 'Photo 12',
+                    description: 'Photo piece number 12.',
+                    thumb: 'assets/Photo_Album/12.jpg',
+                    large: 'assets/Photo_Album/12.jpg'
                 }
             ]
         };
@@ -411,10 +467,22 @@ z" />
 
         document.querySelectorAll('.svg-map a').forEach(link => {
             const galleryKey = link.dataset.gallery;
+            const musicKey = link.dataset.music;
             link.addEventListener('click', (e) => {
                 if (galleryKey) {
                     e.preventDefault();
                     openGallery(galleryKey);
+                    return;
+                }
+
+                if (musicKey) {
+                    e.preventDefault();
+                    const audio = document.getElementById('record-player');
+                    if (audio.paused) {
+                        audio.play();
+                    } else {
+                        audio.pause();
+                    }
                     return;
                 }
 
