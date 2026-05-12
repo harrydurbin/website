@@ -18,30 +18,35 @@
 
         <button id="lang-toggle" class="lang-btn">ES</button>
 
-        <svg viewBox="0 0 1376 768" preserveAspectRatio="xMidYMid slice" class="svg-map">+
+        <svg viewBox="0 0 1376 768" preserveAspectRatio="xMidYMid meet" class="svg-map">
             
             <a href="pages/art.html" data-gallery="art">
                 <path class="hotspot" d="M 324.32,54.33 486.48,88.9 488.95,282.34 323.5,266.7 Z" />
+                <text class="label-text" x="405" y="175" data-en="Art" data-es="Arte">Art</text>
             </a>
 
-            <a href="pages/globe.html">
+            <!-- <a href="pages/globe.html">
                 <path class="hotspot" d="m 722.1,464.92 16.83,2.77 25.14,-0.21 19.39,-3.41 -5.33,-7.03 -16.83,-1.28 -4.05,-5.33 -0.85,-4.69 12.15,-2.13 11.29,-5.54 8.1,-8.31 6.82,-8.95 4.69,-10.65 1.7,-15.34 -1.49,-13.42 -5.54,-13.21 -14.49,-15.34 -16.41,-7.67 -0.43,6.18 -9.38,-1.49 -11.93,0.85 -10.23,3.84 -10.44,7.46 -6.61,7.24 -5.54,9.59 -1.49,9.8 0.21,13 2.56,9.8 4.05,7.24 4.05,5.54 6.82,5.97 7.03,4.9 -0.43,6.61 7.24,3.62 8.31,1.07 -0.64,5.11 -2.77,2.56 -8.31,2.34 -11.72,2.56
 z" />
-            </a>
+                <text class="label-text" x="760" y="480" data-en="Map" data-es="Mapa">Map</text>
+            </a> -->
 
             <a href="pages/photos.html" data-gallery="photos">
                 <path class="hotspot" d="m 236.281,267.25 88.05,6.41 6.19465,65.70 -88.93,-3.09
 z" />
+                <text class="label-text" x="280" y="300" data-en="Photos" data-es="Fotos">Photos</text>
             </a>
 
             <a href="pages/resume.html">
                 <path class="hotspot" d="m 1156.53,166.3 179.49,-28.27 -0.47,151.69 -179.01,10.84
 z" />
+                <text class="label-text" x="1245" y="210" data-en="Resume" data-es="Currículum">Resume</text>
             </a>
 
-            <a href="pages/blog.html">
+            <a href="#" data-notes="true">
                 <path class="hotspot" d="m 705.36,697.85 25.67,57.61 276.13,-10.64 -0.94,-3.76 -11.58,-11.27 -61.05,-49.47 -18.16,1.88 -9.08,-0.31 -17.53,-2.5 -17.85,-2.82 -16.28,-2.5 -11.9,2.19 -4.7,3.13 -7.83,4.7 -3.13,5.32 -7.83,-10.33 -10.64,-3.44 -7.51,0.31 -12.21,1.25 -24.42,4.38 -18.16,5.01 -29.74,1.88 -6.89,8.45
 z" />
+                <text class="label-text" x="850" y="705" data-en="Notes" data-es="Notas">Notes</text>
             </a>
 
             <a href="#" data-music="record">
@@ -49,6 +54,7 @@ z" />
 h -3.13
 l -126.8,-0.31 -8.14,10.02 20.98,73.89 -17.85,0.94 -7.2,1.25 -1.57,2.5 0.63,1.57 -15.03,3.76
 z" />
+                <text class="label-text" x="1280" y="420" data-en="Music" data-es="Música">Music</text>
             </a>
 
             <a href="pages/totoro.html">
@@ -59,24 +65,23 @@ v 3.03
 l 4.92,8.52 1.95,7.29 2.14,7.99 -2.18,10.33 -3.13,9.39 -5.32,6.89 -11.27,3.76 -15.34,1.88 -10.33,-6.89 -5.32,-6.89 -5.95,-2.82 0.94,-11.58 2.19,-9.71 3.44,-7.83 2.5,-4.7 0.94,-6.89 1.88,-5.01 1.25,-5.01 0.31,-11.27 2.19,-1.57 4.38,4.07 2.82,7.51
 z" />
             </a>
-
-            <a href="pages/portfolio.html">
+            <a href="#" data-gallery="portfolio">
                 <path class="hotspot" d="m 984.63,503.11 128.67,10.33 1.25,176.89 -129.61,-25.99
 z" />
+                <text class="label-text" x="1046" y="580" data-en="Portfolio" data-es="Portafolio">Portfolio</text>
             </a>
 
-            <a href="pages/contact.html">
+            <a href="#" data-contact="true">
                 <path class="hotspot" d="m 891.79,415.44 70.41,2.02 2.62,1.19 0.71,2.62 -9.87,52.93 -2.14,0.24 -0.59,1.67 -29.62,4.28 -73.62,-5.35 -0.36,-2.62 1.31,-1.31 29.73,-3.57
 z" />
+                <text class="label-text" x="930" y="440" data-en="Contact" data-es="Contacto">Contact</text>
             </a>
-
-
-
             
             </svg>
     </div>
 
     <audio id="record-player" src="assets/Records/After All.opus" preload="none"></audio>
+    <div id="music-visualizer" class="music-visualizer" aria-hidden="true"></div>
 
     <div id="gallery-modal" class="modal" aria-hidden="true">
         <div class="modal-backdrop" data-close-gallery></div>
@@ -96,6 +101,49 @@ z" />
             <div class="modal-footer">
                 <button id="view-large" class="view-large-btn">View larger</button>
             </div>
+        </div>
+    </div>
+
+    <div id="contact-modal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-contact></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2>Contact</h2>
+                    <!-- <p>Send a note directly.</p> -->
+                </div>
+                <button class="modal-close" aria-label="Close contact form">×</button>
+            </div>
+            <div class="contact-card">
+                <form class="contact-form" action="mailto:harrydurbin@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name">
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message here"></textarea>
+
+                    <button type="submit">Send message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="notes-modal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-notes></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 id="notes-title">Notes</h2>
+                    <!-- <p id="notes-description">Browse notes, haiku, and quotes.</p> -->
+                </div>
+                <button class="modal-close" aria-label="Close notes">×</button>
+            </div>
+            <div class="notes-categories" id="notes-categories"></div>
+            <div class="notes-list" id="notes-list"></div>
+            <div class="notes-content" id="notes-content"></div>
         </div>
     </div>
 
@@ -122,18 +170,44 @@ z" />
         const viewLargeButton = document.getElementById('view-large');
         const galleryTitle = document.getElementById('gallery-title');
         const galleryDescription = document.getElementById('gallery-description');
+        const contactModal = document.getElementById('contact-modal');
+        const notesModal = document.getElementById('notes-modal');
+        const notesTitle = document.getElementById('notes-title');
+        const notesDescription = document.getElementById('notes-description');
+        const notesCategories = document.getElementById('notes-categories');
+        const notesList = document.getElementById('notes-list');
+        const notesContent = document.getElementById('notes-content');
+        const audio = document.getElementById('record-player');
+        const visualizerContainer = document.getElementById('music-visualizer');
+
+        let audioContext;
+        let analyser;
+        let sourceNode;
+        let animationId;
+        const visualizerBars = 16;
 
         const galleryMeta = {
             art: {
                 title: 'Art Gallery',
-                description: 'Scroll the thumbnails below, then click the preview to enlarge.'
+                titleEs: 'Galería de Arte',
+                description: 'Scroll the thumbnails below, then click the preview to enlarge.',
+                descriptionEs: 'Desplaza las miniaturas abajo y haz clic en la vista previa para ampliar.'
             },
             photos: {
                 title: 'Photo Gallery',
-                description: 'Browse photo thumbnails, then enlarge the selected image.'
+                titleEs: 'Galería de Fotos',
+                description: 'Browse photo thumbnails, then enlarge the selected image.',
+                descriptionEs: 'Explora las miniaturas de fotos y amplía la imagen seleccionada.'
+            },
+            portfolio: {
+                title: 'Project Portfolio',
+                titleEs: 'Portafolio de Proyectos',
+                description: 'A collection of data science and engineering projects. Click a tile to view the repository.',
+                descriptionEs: 'Una colección de proyectos de ciencia de datos e ingeniería. Haz clic en una tarjeta para ver el repositorio.'
             }
         };
 
+        
         const galleryData = {
             art: [
                 {
@@ -396,7 +470,44 @@ z" />
                     thumb: 'assets/Photo_Album/12.jpg',
                     large: 'assets/Photo_Album/12.jpg'
                 }
+            ],
+            portfolio: [
+                { title: 'Chicago Bus Analysis', url: 'https://github.com/harrydurbin/chicago-bus-analysis', thumb: 'assets/Portfolio/bus.jpg' },
+                { title: 'Happiness Level Predictor', url: 'https://github.com/harrydurbin/happiness-level-predictor', thumb: 'assets/Portfolio/happiness.jpg' },
+                { title: 'Spatial Clustering of 1M Tweets', url: 'https://github.com/harrydurbin/tweet-data', thumb: 'assets/Portfolio/tweets.jpg' },
+                { title: 'Temperature Monitoring', url: 'https://github.com/harrydurbin/temperature-monitoring', thumb: 'assets/Portfolio/temp.jpg' },
+                { title: 'NREL SAM Python Automator', url: 'https://github.com/harrydurbin/nrel-sam-python', thumb: 'assets/Portfolio/nrel.jpg' },
+                { title: 'Rainwater Tank Controller', url: 'https://github.com/harrydurbin/rain-tank-disinfection', thumb: 'assets/Portfolio/rain.jpg' },
+                { title: 'GIS Street Link Algorithm', url: 'https://github.com/harrydurbin/GIS-street-link-algorithm', thumb: 'assets/Portfolio/gis.jpg' },
+                { title: 'EEG Brainwave Analysis', url: 'https://github.com/harrydurbin/mindwave-eeg-data-analysis', thumb: 'assets/Portfolio/eeg.jpg' },
+                { title: 'Taxi Fare Predictor', url: 'https://github.com/harrydurbin/taxi-fare-predictor', thumb: 'assets/Portfolio/taxi.jpg' },
+                { title: 'Pokemon Battle Simulator', url: '#', thumb: 'assets/Portfolio/pokemon.jpg' }
             ]
+        };
+
+        const notesData = {
+            notes: [
+                {
+                    title: 'asdfadf',
+                    content: 'adsfadf'
+                }
+            ],
+            quotes: [
+                {
+                    title: 'sadffda',
+                    content: '"Tasd ffad" — adfadf'
+               }
+            ],
+            haiku: [
+                {
+                    title: 'sadffdaf',
+                    content: 'asdfdaf\nasdfadf\nasdfadf'
+                },
+                {
+                    title: 'asdffda',
+                    content: 'adsfadf.'
+                }
+            ],
         };
 
         let activeGallery = null;
@@ -419,26 +530,57 @@ z" />
         const buildGallery = (galleryKey) => {
             const items = galleryData[galleryKey] || [];
             thumbnailList.innerHTML = '';
+            
+            // Check if we are in portfolio mode
+            const isPortfolio = galleryKey === 'portfolio';
+            galleryModal.classList.toggle('portfolio-mode', isPortfolio);
+
             items.forEach((item, index) => {
-                const thumb = document.createElement('button');
-                thumb.type = 'button';
-                thumb.className = 'thumbnail-item';
-                thumb.innerHTML = `<img src="${item.thumb}" alt="${item.title}">`;
-                thumb.addEventListener('click', () => setActiveItem(item, index));
-                thumbnailList.appendChild(thumb);
+                if (isPortfolio) {
+                    // Portfolio items are links that open in a new tab
+                    const link = document.createElement('a');
+                    link.href = item.url;
+                    link.target = '_blank';
+                    link.className = 'thumbnail-item portfolio-item';
+                    link.innerHTML = `
+                        <img src="${item.thumb}" alt="${item.title}">
+                        <div class="project-label">${item.title}</div>
+                    `;
+                    thumbnailList.appendChild(link);
+                } else {
+                    // Standard gallery behavior
+                    const thumb = document.createElement('button');
+                    thumb.type = 'button';
+                    thumb.className = 'thumbnail-item';
+                    thumb.innerHTML = `<img src="${item.thumb}" alt="${item.title}">`;
+                    thumb.addEventListener('click', () => setActiveItem(item, index));
+                    thumbnailList.appendChild(thumb);
+                }
             });
 
-            if (items.length > 0) {
+
+            if (!isPortfolio && items.length > 0) {
                 setActiveItem(items[0], 0);
             }
         };
 
+        const setGalleryText = (galleryKey) => {
+            const meta = galleryMeta[galleryKey] || { title: 'Gallery', titleEs: 'Galería', description: '', descriptionEs: '' };
+            galleryTitle.textContent = isEnglish ? meta.title : meta.titleEs;
+            galleryDescription.textContent = isEnglish ? meta.description : meta.descriptionEs;
+        };
+
         const openGallery = (galleryKey) => {
-            const meta = galleryMeta[galleryKey] || { title: 'Gallery', description: '' };
-            galleryTitle.textContent = meta.title;
-            galleryDescription.textContent = meta.description;
+            setGalleryText(galleryKey);
 
             activeGallery = galleryKey;
+
+            if (galleryKey === 'portfolio') {
+                galleryModal.classList.add('portfolio-mode');
+            } else {
+                galleryModal.classList.remove('portfolio-mode');
+            }
+
             galleryModal.classList.add('visible');
             galleryModal.setAttribute('aria-hidden', 'false');
             buildGallery(galleryKey);
@@ -459,10 +601,143 @@ z" />
             previewPopup.setAttribute('aria-hidden', 'true');
         };
 
+        const openContact = () => {
+            contactModal.classList.add('visible');
+            contactModal.setAttribute('aria-hidden', 'false');
+        };
+
+        const closeContact = () => {
+            contactModal.classList.remove('visible');
+            contactModal.setAttribute('aria-hidden', 'true');
+        };
+
+        const openNotes = () => {
+            notesModal.classList.add('visible');
+            notesModal.setAttribute('aria-hidden', 'false');
+            showCategories();
+        };
+
+        const closeNotes = () => {
+            notesModal.classList.remove('visible');
+            notesModal.setAttribute('aria-hidden', 'true');
+        };
+
+        const showCategories = () => {
+            notesCategories.innerHTML = '';
+            notesList.innerHTML = '';
+            notesContent.innerHTML = '';
+
+            Object.keys(notesData).forEach(category => {
+                const button = document.createElement('button');
+                button.className = 'category-btn';
+                button.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                button.addEventListener('click', () => showCategory(category));
+                notesCategories.appendChild(button);
+            });
+        };
+
+        const showCategory = (category) => {
+            const entries = notesData[category];
+            notesList.innerHTML = '';
+            notesContent.innerHTML = '';
+
+            entries.forEach((entry, index) => {
+                const item = document.createElement('div');
+                item.className = 'notes-item';
+                item.innerHTML = `<h3>${entry.title}</h3>`;
+                item.addEventListener('click', () => showEntry(category, index));
+                notesList.appendChild(item);
+            });
+        };
+
+        const showEntry = (category, index) => {
+            const entry = notesData[category][index];
+            notesContent.innerHTML = `
+                <h3>${entry.title}</h3>
+                <div class="entry-content">${entry.content.replace(/\n/g, '<br>')}</div>
+            `;
+        };
+
+        const createAudioGraph = () => {
+            if (!window.AudioContext && !window.webkitAudioContext) {
+                return;
+            }
+
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioContext.createAnalyser();
+                analyser.fftSize = 64;
+                analyser.smoothingTimeConstant = 0.8;
+                sourceNode = audioContext.createMediaElementSource(audio);
+                sourceNode.connect(analyser);
+                analyser.connect(audioContext.destination);
+            }
+        };
+
+        const createVisualizerBars = () => {
+            visualizerContainer.innerHTML = '';
+            for (let i = 0; i < visualizerBars; i += 1) {
+                const bar = document.createElement('div');
+                bar.className = 'visualizer-bar';
+                visualizerContainer.appendChild(bar);
+            }
+        };
+
+        const stopVisualizer = () => {
+            visualizerContainer.classList.remove('active');
+            cancelAnimationFrame(animationId);
+            visualizerContainer.querySelectorAll('.visualizer-bar').forEach(bar => {
+                bar.style.height = '8%';
+            });
+        };
+
+        const animateVisualizer = () => {
+            if (!analyser) {
+                return;
+            }
+
+            const data = new Uint8Array(analyser.frequencyBinCount);
+            analyser.getByteFrequencyData(data);
+            const bars = visualizerContainer.querySelectorAll('.visualizer-bar');
+
+            bars.forEach((bar, index) => {
+                const value = data[index] || 0;
+                const height = Math.max(8, (value / 255) * 100);
+                bar.style.height = `${height}%`;
+            });
+
+            animationId = requestAnimationFrame(animateVisualizer);
+        };
+
+        const startVisualizer = async () => {
+            createAudioGraph();
+            createVisualizerBars();
+            visualizerContainer.classList.add('active');
+
+            if (audioContext && audioContext.state === 'suspended') {
+                await audioContext.resume();
+            }
+
+            cancelAnimationFrame(animationId);
+            animateVisualizer();
+        };
+
         btn.addEventListener('click', () => {
             isEnglish = !isEnglish;
             title.innerHTML = isEnglish ? "Welcome to<br>Harry's" : "Bienvenido a<br>Harry's";
             btn.textContent = isEnglish ? "ES" : "EN";
+
+            document.querySelectorAll('.label-text').forEach(label => {
+                const enText = label.dataset.en;
+                const esText = label.dataset.es;
+                label.textContent = isEnglish ? enText : esText;
+            });
+
+            if (galleryModal.classList.contains('visible') && activeGallery) {
+                setGalleryText(activeGallery);
+            }
+
+            viewLargeButton.textContent = isEnglish ? 'View larger' : 'Ver más grande';
         });
 
         document.querySelectorAll('.svg-map a').forEach(link => {
@@ -477,12 +752,27 @@ z" />
 
                 if (musicKey) {
                     e.preventDefault();
-                    const audio = document.getElementById('record-player');
                     if (audio.paused) {
                         audio.play();
+                        startVisualizer();
                     } else {
                         audio.pause();
+                        stopVisualizer();
                     }
+                    return;
+                }
+
+                const contactKey = link.dataset.contact;
+                if (contactKey) {
+                    e.preventDefault();
+                    openContact();
+                    return;
+                }
+
+                const notesKey = link.dataset.notes;
+                if (notesKey) {
+                    e.preventDefault();
+                    openNotes();
                     return;
                 }
 
@@ -493,12 +783,19 @@ z" />
             });
         });
 
-        document.querySelector('.modal-close').addEventListener('click', closeGallery);
+        document.querySelectorAll('.modal-close').forEach(button => button.addEventListener('click', () => {
+            closeGallery();
+            closeContact();
+            closeNotes();
+        }));
         document.querySelector('[data-close-gallery]').addEventListener('click', closeGallery);
+        document.querySelector('[data-close-contact]').addEventListener('click', closeContact);
+        document.querySelector('[data-close-notes]').addEventListener('click', closeNotes);
         document.querySelector('.preview-close').addEventListener('click', closePreview);
         document.querySelector('[data-close-preview]').addEventListener('click', closePreview);
         viewLargeButton.addEventListener('click', openPreview);
         activeImage.addEventListener('click', openPreview);
+        audio.addEventListener('ended', stopVisualizer);
 
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {

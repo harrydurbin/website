@@ -22,22 +22,26 @@ html, body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 
 /* Overlay the SVG perfectly on top of the image */
 .svg-map {
     position: absolute;
-    top: 2%;
-    left: 2%;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
-    transform: translate(-2%, -2%);
-    z-index: 99;
+    z-index: 5;
+    pointer-events: none;
     
-    /* ADD THIS: This makes the SVG container "click-through" */
-    pointer-events: none; 
+
+}
+
+.svg-map a, .hotspot {
+    pointer-events: auto; /* Ensure the actual buttons are still clickable */
+    cursor: pointer;
 }
 
 .hotspot {
@@ -48,6 +52,115 @@ html, body {
     stroke: transparent;
     cursor: pointer;
 }
+
+.label-text {
+    pointer-events: none;
+    font-family: 'Audiowide', cursive;
+    font-size: clamp(1rem, 2vw, 2rem);
+    fill: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.9);
+    text-anchor: middle;
+    dominant-baseline: middle;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.contact-page {
+    min-height: 100vh;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top, rgba(255,255,255,0.06), rgba(17,17,17,0.98));
+    color: #f4f4f4;
+}
+
+.contact-card {
+    width: min(760px, 100%);
+    padding: 2rem;
+    background: rgba(12, 12, 12, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.25);
+}
+
+.contact-card h1 {
+    margin-top: 0;
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.contact-card p {
+    color: #d3d3d3;
+    line-height: 1.75;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.4rem;
+    border-radius: 999px;
+    border: none;
+    background: #ffd700;
+    color: #111;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(255, 215, 0, 0.2);
+}
+
+.contact-note {
+    margin-top: 1rem;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
 
 .title {
     position: absolute;
@@ -75,13 +188,29 @@ html, body {
         text-align: center;
         font-size: 3rem;
     }
+
+    .hotspot {
+        stroke: rgba(255, 223, 0, 0.6);
+        stroke-width: 2;
+        fill: rgba(255, 223, 0, 0.1);
+    }
+
+    .hotspot:hover {
+        stroke: rgba(255, 223, 0, 1);
+        fill: rgba(255, 223, 0, 0.2);
+    }
+
+    .label-text {
+        font-size: clamp(0.8rem, 3vw, 1.2rem);
+    }
 }
+
 
 .lang-btn {
     position: absolute;
     top: 24px;
     right: 24px;
-    z-index: 2;
+    z-index: 7;
     padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 999px;
@@ -94,10 +223,52 @@ html, body {
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
-..lang-btn:hover {
+.lang-btn:hover {
     transform: translateY(-1px);
     background: rgba(255, 255, 255, 1);
 }
+
+.music-visualizer {
+    position: absolute;
+        right: 3%;
+        bottom: 5%;
+        width: min(210px, 20vw);
+        height: 82px;
+        padding: 0.6rem;
+        display: flex;
+        align-items: flex-end;
+        gap: 0.25rem;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+        pointer-events: none;
+        opacity: 0.55;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        z-index: 8;
+    }
+
+    .music-visualizer.active {
+        opacity: 0.95;
+    }
+
+    .visualizer-bar {
+        flex: 1;
+        min-height: 8%;
+        height: 8%;
+        background: rgba(255, 255, 255, 0.82);
+        border-radius: 10px;
+        transition: height 0.08s ease;
+    }
+
+    @media (max-width: 768px) {
+        .music-visualizer {
+            right: 4%;
+            bottom: 4%;
+            width: 160px;
+            height: 72px;
+        }
+    }
 
 .modal,
 .preview-popup {
@@ -106,7 +277,7 @@ html, body {
     display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 10000;
 }
 
@@ -119,7 +290,7 @@ html, body {
 .preview-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .modal-content,
@@ -128,9 +299,9 @@ html, body {
     z-index: 2;
     width: min(1100px, 95vw);
     max-height: 90vh;
-    background: rgba(17, 17, 17, 0.98);
+    background: rgba(17, 17, 17, 0.85);
     border-radius: 24px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     display: grid;
     gap: 1rem;
@@ -256,4 +427,117 @@ html, body {
     fill: rgba(255, 223, 0, 0.15); /* Soft gold inner glow */
     stroke: rgba(255, 223, 0, 0.8); /* Sharp gold outline */
     filter: drop-shadow(0 0 8px gold); /* Outer glow effect */
+}
+
+/* Hide standard elements in portfolio mode */
+.modal.portfolio-mode .gallery-preview,
+.modal.portfolio-mode .modal-footer {
+    display: none;
+}
+
+/* Transform the thumbnail list into a grid */
+.modal.portfolio-mode .thumbnail-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    overflow-y: auto;
+    max-height: 70vh; /* Allow scrolling within the grid */
+}
+
+/* Style the portfolio tiles */
+.portfolio-item {
+    width: 100% !important; /* Override the fixed width */
+    height: auto !important;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    border-color: #ffd700;
+}
+
+.project-label {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    font-family: 'Audiowide', cursive;
+}
+
+.portfolio-item img {
+    aspect-ratio: 16/9;
+}
+
+/* Notes Modal Styles */
+.notes-categories {
+    display: flex;
+    gap: 1rem;
+    padding: 0 1.4rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.category-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.notes-list {
+    padding: 0 1.4rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.notes-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.notes-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.notes-item h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.notes-content {
+    padding: 0 1.4rem 1.4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+}
+
+.notes-content h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.entry-content {
+    color: #dcdcdc;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+#notes-modal .modal-content {
+    grid-template-rows: auto 1fr;
 }
