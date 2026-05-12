@@ -4,23 +4,24 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .room-container {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     margin: 0;
     overflow: hidden;
 }
 
+
 .room-img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     display: block;
 }
@@ -28,20 +29,227 @@ html, body {
 /* Overlay the SVG perfectly on top of the image */
 .svg-map {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 10%;
+    left: 10%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-10%, -10%);
+    z-index: 99;
+    
+    /* ADD THIS: This makes the SVG container "click-through" */
+    pointer-events: none; 
 }
 
-/* The invisible shapes */
 .hotspot {
-    fill: rgba(255, 255, 255, 0); /* Invisible by default */
+    /* Ensure this is set so the hotspots REMAIN clickable */
+    pointer-events: auto; 
+    
+    fill: rgba(255, 255, 255, 0);
     stroke: transparent;
-    stroke-width: 3;
     cursor: pointer;
-    transition: all 0.4s ease-in-out;
 }
+
+.title {
+    position: absolute;
+    top: 18%;
+    right: 18%;
+    transform: translateX(0);
+    margin: 0;
+    color: white;
+    text-align: right;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
+    font-family: 'Audiowide', cursive;
+    font-size: clamp(2.5rem, 5vw, 5.5rem);
+    line-height: 1.05;
+    z-index: 2;
+    background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 70%);
+    padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .title {
+        top: 10%;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 3rem;
+    }
+}
+
+.lang-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 2;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.88);
+    color: #111;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+..lang-btn:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 1);
+}
+
+.modal,
+.preview-popup {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+}
+
+.modal.visible,
+.preview-popup.visible {
+    display: flex;
+}
+
+.modal-backdrop,
+.preview-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.modal-content,
+.preview-content {
+    position: relative;
+    z-index: 2;
+    width: min(1100px, 95vw);
+    max-height: 90vh;
+    background: rgba(17, 17, 17, 0.98);
+    border-radius: 24px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    display: grid;
+    gap: 1rem;
+}
+
+.modal-header,
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.4rem 0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
+    color: #fff;
+}
+
+.modal-header p,
+.preview-caption {
+    margin: 0.5rem 0 0;
+    color: #dcdcdc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.modal-close,
+.preview-close,
+.view-large-btn {
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    color: #111;
+    border-radius: 999px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.view-large-btn {
+    width: auto;
+    padding: 0 1.25rem;
+    font-size: 1rem;
+    height: 44px;
+}
+
+.gallery-preview,
+.preview-content {
+    width: 100%;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem 0;
+}
+
+.gallery-preview img,
+.preview-content img {
+    max-width: 100%;
+    max-height: 62vh;
+    object-fit: contain;
+    border-radius: 18px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.4);
+}
+
+.thumbnail-list {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 1.4rem 1.2rem;
+}
+
+.thumbnail-item {
+    border: 2px solid transparent;
+    border-radius: 18px;
+    overflow: hidden;
+    width: 140px;
+    height: 100px;
+    background: #1a1a1a;
+    cursor: pointer;
+    flex: 0 0 auto;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.thumbnail-item.selected {
+    border-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.preview-content {
+    padding: 1.4rem;
+}
+
+.preview-content img {
+    max-height: 70vh;
+}
+
+@media (max-width: 768px) {
+    .modal-content,
+    .preview-content {
+        width: 95vw;
+    }
+
+    .thumbnail-item {
+        width: 110px;
+        height: 80px;
+    }
+}
+
 
 /* The highlight effect when the cursor hovers */
 .hotspot:hover {
