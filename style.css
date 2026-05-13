@@ -164,8 +164,8 @@ html, body {
 
 .title {
     position: absolute;
-    top: 18%;
-    right: 18%;
+    top: 8%;
+    right: 25%;
     transform: translateX(0);
     margin: 0;
     color: white;
@@ -277,7 +277,7 @@ html, body {
     display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.1);
     z-index: 10000;
 }
 
@@ -290,7 +290,7 @@ html, body {
 .preview-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .modal-content,
@@ -299,9 +299,9 @@ html, body {
     z-index: 2;
     width: min(1100px, 95vw);
     max-height: 90vh;
-    background: rgba(17, 17, 17, 0.85);
+    background: rgba(240, 234, 234, 0.85);
     border-radius: 24px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: grid;
     gap: 1rem;
@@ -313,18 +313,20 @@ html, body {
     align-items: center;
     justify-content: space-between;
     padding: 1.2rem 1.4rem 0;
+    color: black;
 }
 
 .modal-header h2 {
     margin: 0;
     font-size: clamp(1.6rem, 2vw, 2.4rem);
-    color: #fff;
+    color: #111;
 }
 
 .modal-header p,
 .preview-caption {
     margin: 0.5rem 0 0;
-    color: #dcdcdc;
+    /* color: #dcdcdc; */
+    color: #111;
     font-size: 0.95rem;
     line-height: 1.5;
 }
