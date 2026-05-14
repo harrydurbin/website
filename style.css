@@ -476,6 +476,7 @@ html, body {
 
 /* Notes Modal Styles */
 .notes-categories {
+    color: black;
     display: flex;
     gap: 1rem;
     padding: 0 1.4rem;
@@ -485,7 +486,7 @@ html, body {
 .category-btn {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+    color: #111;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     cursor: pointer;
@@ -519,7 +520,7 @@ html, body {
 
 .notes-item h3 {
     margin: 0;
-    color: #fff;
+    color: #111;
     font-size: 1.1rem;
 }
 
@@ -530,16 +531,80 @@ html, body {
 }
 
 .notes-content h3 {
-    color: #fff;
+    color: #111;
     margin-bottom: 1rem;
 }
 
 .entry-content {
-    color: #dcdcdc;
+    color: #111;
     line-height: 1.6;
     white-space: pre-line;
 }
 
 #notes-modal .modal-content {
     grid-template-rows: auto 1fr;
+}
+
+.resume-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #333;
+    line-height: 1.6;
+}
+.resume-header {
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.resume-header h1 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 2.5em;
+}
+.resume-title {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: 600;
+    margin-top: 5px;
+}
+.resume-summary {
+    margin-top: 15px;
+    font-size: 1em;
+}
+.resume-section {
+    margin-bottom: 30px;
+}
+.resume-section h2 {
+    color: #2c3e50;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+.job, .education-item {
+    margin-bottom: 20px;
+}
+.job h3, .education-item h3 {
+    margin: 0 0 5px 0;
+    color: #2980b9;
+    font-size: 1.2em;
+}
+.job-company, .education-school {
+    font-style: italic;
+    color: #7f8c8d;
+    margin: 0 0 10px 0;
+}
+.job ul {
+    margin: 0;
+    padding-left: 20px;
+}
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+}
+.skills-list li {
+    margin-bottom: 8px;
 }
