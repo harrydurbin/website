@@ -185,7 +185,7 @@ html, body {
 
 @media (max-width: 768px) {
     .title {
-        top: 10%;
+        top: 3%;
         right: 0;
         width: 100%;
         text-align: center;
@@ -280,7 +280,7 @@ html, body {
     display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 10000;
 }
 
@@ -293,7 +293,7 @@ html, body {
 .preview-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, .5);
 }
 
 .modal-content,
@@ -302,7 +302,7 @@ html, body {
     z-index: 2;
     width: min(1100px, 95vw);
     max-height: 90vh;
-    background: rgba(240, 234, 234, 0.85);
+    background: rgba(240, 234, 234, 1);
     border-radius: 24px;
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -430,7 +430,7 @@ html, body {
 /* The highlight effect when the cursor hovers */
 .hotspot:hover {
     fill: rgba(255, 223, 0, 0.15); /* Soft gold inner glow */
-    stroke: rgba(255, 223, 0, 0.8); /* Sharp gold outline */
+    stroke: rgba(255, 223, 0, 0.6); /* Sharp gold outline */
     filter: drop-shadow(0 0 8px gold); /* Outer glow effect */
 }
 
