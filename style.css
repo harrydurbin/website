@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
 /* Make the image stretch to fill the browser viewport */
 html, body {
     margin: 0;
@@ -55,8 +57,9 @@ html, body {
 
 .label-text {
     pointer-events: none;
-    font-family: 'Audiowide', cursive;
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-family: 'Orbitron',cursive;
+    /* 'Audiowide', cursive; */
+    font-size: clamp(0.5rem, 1vw, 1rem);
     fill: white;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.9);
     text-anchor: middle;
@@ -164,14 +167,14 @@ html, body {
 
 .title {
     position: absolute;
-    top: 8%;
+    top: 2%;
     right: 25%;
     transform: translateX(0);
     margin: 0;
     color: white;
     text-align: right;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
-    font-family: 'Audiowide', cursive;
+    font-family: 'Orbitron',cursive;
     font-size: clamp(2.5rem, 5vw, 5.5rem);
     line-height: 1.05;
     z-index: 2;
